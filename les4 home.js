@@ -54,6 +54,7 @@ const sumMe = {
 let total = 0;
 
 function checkIsPropNumber(obj) {
+    let count = 0;
     for(let prop in obj) {
         if(typeof(obj[prop]) == 'number') count++;
     }
@@ -93,8 +94,8 @@ const goods = [
 
 function addId(arr) {
     return arr.map(
-        function(element) {
-            if(!('id' in element)) element['id'] = 0;
+        function(element, index) {
+            if(!('id' in element)) element['id'] = index;
             return element;
         }
     );
